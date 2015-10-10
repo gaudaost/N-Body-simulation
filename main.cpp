@@ -4,7 +4,6 @@
 #include <math.h>
 #include "model/point3.h"
 #include "model/integrator.h"
-#include "view.h"
 using namespace std;
 using namespace std::chrono;
 
@@ -35,7 +34,7 @@ int main(int argc, char** argv) {
 		radii.push_back(randFloat(0,20));
 	}
 	Integrator integrator=Integrator(points,vel,radii,dt);
-	integrator.mainLoop(1000000);
+	integrator.mainLoop(100000);
 	high_resolution_clock::time_point t2 = high_resolution_clock::now();
 
 	auto duration = std::chrono::duration_cast < std::chrono::milliseconds
